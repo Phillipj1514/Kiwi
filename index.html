@@ -19,8 +19,6 @@
   <script  src="js/dropdown.js" type="text/javascript"></script>
 
   <script src="https://use.fontawesome.com/6b895b1400.js"></script>
-
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
   
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   
@@ -69,10 +67,6 @@
             PROJECTS
             </a>
 
-<!--             <a class="navbar-item" href="#" style="color: #fff">
-              CONTACT US
-            </a>
- -->
           </div>
 
         </div>
@@ -108,13 +102,11 @@
  
  <!-- Kiwi Jumbotron -->
 
-<div class="bg is-hidden-mobile is-hidden-tablet-only parallax"></div>
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/Logo_3.png"></div>
 
-<div class="bg-1 is-hidden-desktop parallax"></div>
- 
  <!--Our Services-->
 
- <section id="service-header" class="section">
+<section id="service-header" class="section">
  
   <h1 class="title has-text-centered" style="padding-top: 3%; font-size: 3em;">Our Services </h1>
 
@@ -134,7 +126,9 @@
 
       <h3 class="title has-text-centered">Web Development</h3 >
 
-      <p class="has-text-centered">We are committed to build fully responsive websites with mobile first in mind</p>
+      <p class="has-text-centered">We are committed to build beautiful </p> 
+      <p class="has-text-centered"> and fully responsivewebsites with mobile first in mind</p>
+      <p class="has-text-centered">Our websites are optimized to run on all platforms efficiently</p>
 
     </div>
 
@@ -144,7 +138,8 @@
 
     <h3 class="title has-text-centered">App Development</h3 >
 
-    <p class="has-text-centered">Building quality over quantity is what we have in mind when creating our apps/</p>
+    <p class="has-text-centered">Building quality over quantity is what we have in mind when creating our apps.</p> 
+    <p class="has-text-centered">They are built on a hybrid platform to ensure your app is deployed on all platforms at the same time.</p>
 
     </div>
   
@@ -153,16 +148,14 @@
 </section>
 
 <!-- Projects -->
-<div class="pg parallax" id="projects">
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/4.jpg">
   
-      <h1 class="title has-text-centered" style="color: #ffffff; font-size: 6em;
+  <h1 class="title has-text-centered" style="color: #ffffff; font-size: 6em;
     padding-top: 7%;">Projects</h1>
 
-        <h3 class="title has-text-centered" style="color: #ffffff">Coming Soon</h3 >
-
+  <h3 class="title has-text-centered" style="color: #ffffff">Coming Soon</h3 >
 
 </div>
-
 
 <!-- About Us -->
 <section class="section">
@@ -185,7 +178,7 @@
 
 </section>
 
-  <div id="team" name="team"></div>
+<div id="team" name="team"></div>
     
     <br>
 
@@ -287,17 +280,34 @@
         </div>
   
     </div>
- 
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
-    <script type="text/javascript">
+    <footer class="footer" style="background-color: #000000;">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <a href="contact"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script type="text/javascript">
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
 
-      AOS.init({
-        duration: 1200
-      });
-
-    </script>  
-
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
+</script>
 </body>
 
 </html>
